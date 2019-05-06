@@ -1,12 +1,11 @@
 import { Action } from "../action";
 import { Config } from "../../types/config.type";
 
-export class SetHandler extends Action {
-    constructor(readonly config: Config) {
-        super();
+export class SetHandler{
+    constructor(readonly action: Action) {
     }
     handler(target, key, value) {
-        super.handler(target, key);
+        this.action.handler(target, 'set', key, value);
         target[key] = value;
         return true;
     }

@@ -1,7 +1,5 @@
-import { GetHandler } from "./change-hooks/hooks/get";
-import { SetHandler } from "./change-hooks/hooks/set";
-import { DeleteHandler } from "./change-hooks/hooks/delete";
 import { Config } from "./types/config.type";
+import { handlerFactory } from "./handler.factory";
 
 
 
@@ -22,20 +20,16 @@ function convertToProxyRecursively(target, config: Config) {
 
 
 function getHookedProxy(target, config: Config) {
-    const handler: ProxyHandler<any> = {
-        set: new SetHandler(config).handler,
-        deleteProperty: new DeleteHandler().handler
-    }
-    if (config.logGetCalls) {
-        handler.get = new GetHandler().handler
-    }
+    const handler = handlerFactory(config);
     return new Proxy(target, handler);
 }
 
-export function getTracr(target, givenConfig?: Config) {
+export function getTracr(target, givenConfig?: Partial<Config>) {
     const config: Config = {
         traceNewKeys: true, 
         logGetCalls: false,
+        maintainChangeLog: false,
+        log: true,
         ...givenConfig
     }
     convertToProxyRecursively(target, config);

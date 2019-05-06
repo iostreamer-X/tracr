@@ -1,8 +1,11 @@
 import { Action } from "../action";
 
-export class DeleteHandler extends Action {
+export class DeleteHandler {
+    constructor(readonly action: Action) {
+
+    }
     handler(target, key) {
-        super.handler(target, key);
+        this.action.handler(target, 'delete', key, target[key]);
         delete target[key];
         return true;
     }
