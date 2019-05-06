@@ -1,6 +1,6 @@
 {
   "name": "object-event-tracr",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A javascript library to monitor changes done to your objects! ⚡",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,5 +24,6 @@
   },
   "devDependencies": {
     "typescript": "^3.4.5"
-  }
+  },
+  "keywords": ["object", "events", "tracer", "logging"]
 }
