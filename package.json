@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/iostreamer-X/tracr/issues"
   },
-  "homepage": "https://github.com/iostreamer-X/tracr#readme"
+  "homepage": "https://github.com/iostreamer-X/tracr#readme",
+  "dependencies": {
+    "typescript": "^3.4.5"
+  }
 }
