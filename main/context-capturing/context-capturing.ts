@@ -26,8 +26,6 @@ export class ContextCapture {
     }
 
     static getPrettyLog(context: Context) {
-        return `
-        ${context.key} modified/accessed at ${context.fileName}:${context.lineNumber} by function '${context.functionName}' with ${context.operation} operation and value '${context.value}'.
-        `;
+        return `${context.key} modified/accessed at ${context.fileName}:${context.lineNumber} by function '${context.functionName}' with ${context.operation} operation and value '${context.value}'.`;
     }
 }
