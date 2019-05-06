@@ -1,0 +1,20 @@
+{
+  "name": "tracr",
+  "version": "1.0.0",
+  "description": "A javascript library to monitor changes done to your objects! ⚡",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iostreamer-X/tracr.git"
+  },
+  "author": "iostreamer-X",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iostreamer-X/tracr/issues"
+  },
+  "homepage": "https://github.com/iostreamer-X/tracr#readme"
+}

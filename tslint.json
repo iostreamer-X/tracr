@@ -1,0 +1,23 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint-config-airbnb", "tslint-config-prettier"
+    ],
+    "jsRules": {},
+    "rules": {
+        "max-line-length": {
+            "options": {
+                "limit": 160
+            },
+            "severity": "error"
+        },
+        "variable-name": [true, "allow-snake-case"],
+        "no-parameter-reassignment": false,
+        "object-shorthand-properties-first": false,
+        "align": false,
+        "ter-arrow-parens": false,
+        "prefer-template": false
+    },
+    "rulesDirectory": [],
+    "autoFixOnSave": true
+}
