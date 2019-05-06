@@ -24,7 +24,7 @@ function getHookedProxy(target, config: Config) {
     return new Proxy(target, handler);
 }
 
-export function getTracr(target, givenConfig?: Partial<Config>) {
+export function getTracr<T>(target: T, givenConfig?: Partial<Config>): T {
     const config: Config = {
         traceNewKeys: true, 
         logGetCalls: false,

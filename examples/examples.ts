@@ -1,7 +1,7 @@
 import { getTracr } from '../main/index';
 
 const logs = [];
-const originalObject = { message: 'This is a test', value: 1 };
+const originalObject: any = { message: 'This is a test', value: 1 };
 const tracerObject = getTracr(
     originalObject, 
     { maintainChangeLog: true, changeLog: logs}
