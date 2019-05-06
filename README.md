@@ -66,6 +66,13 @@ Output:
 <br>
 <br>
 
+Installation
+---
+
+`npm install --save object-event-tracr`
+
+<br>
+
 Documentation:
 ---
 
@@ -73,15 +80,15 @@ Documentation:
     - your original object
     - config object
         - Following configuration is supported
-            - traceNewKeys(true)
+            - traceNewKeys(`true`)
                 - You can turn it off so that new keys aren't tracked
-            - logGetCalls(false)
+            - logGetCalls(`false`)
                 - To log which keys have been accessed and where
-            - maintainChangeLog(false)
+            - maintainChangeLog(`false`)
                 - You can turn it on to get structured response in an array
-            - log(true)
+            - log(`true`)
                 - Turn it off to disable logging to console
-            - changeLog([])
+            - changeLog(`[]`)
                 - Pass your array here and when done you'd have the change log stored in this array
 
 
