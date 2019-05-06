@@ -1,4 +1,5 @@
 import * as stackTrace from 'stack-trace';
+import * as colors from 'colors/safe';
 
 export type Context = {
     fileName: string,
@@ -26,6 +27,12 @@ export class ContextCapture {
     }
 
     static getPrettyLog(context: Context) {
-        return `${context.key} modified/accessed at ${context.fileName}:${context.lineNumber} by function '${context.functionName}' with ${context.operation} operation and value '${context.value}'.`;
+        const key = colors.red(context.key);
+        const operation = colors.yellow(colors.underline(context.operation));
+        const value = colors.green(context.value);
+        const fileName = colors.cyan(context.fileName);
+        const functionName = colors.cyan(context.functionName);
+        const lineNumber = colors.cyan(context.lineNumber.toString());
+        return `${key} modified/accessed at ${fileName}:${lineNumber} by function '${functionName}' with ${operation} operation and value '${value}'.`;
     }
 }
