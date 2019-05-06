@@ -10,7 +10,7 @@ export type Context = {
 };
 export class ContextCapture {
     static getContext(frames: stackTrace.StackFrame[], operation: string, key: string, value: string): Context {
-        const frame = frames[2];
+        const frame = frames[3];
         const fileName = frame.getFileName();
 		const functionName = frame.getFunctionName() || '[anonymous]';
         const lineNumber = frame.getLineNumber();
