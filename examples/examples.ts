@@ -9,6 +9,16 @@ function f2() {
     tracerObject.message = 'This is a very good test!'
     tracerObject.value = 3000;   
 }
+function f3() {
+    tracerObject.newKey = 'Added new key';
+}
+function f4() {
+    (function f5(){
+        tracerObject.newKey = 'Modified new key';
+    })();
+}
 f1();
 f2();
+f3();
+f4();
 console.log(tracerObject.changeLog);
