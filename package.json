@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/iostreamer-X/tracr#readme",
   "dependencies": {
+    "@types/stack-trace": "0.0.29",
     "typescript": "^3.4.5"
   }
 }
