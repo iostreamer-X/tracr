@@ -30,6 +30,7 @@ export function getTracr(target, givenConfig?: Partial<Config>) {
         logGetCalls: false,
         maintainChangeLog: false,
         log: true,
+        changeLog: [],
         ...givenConfig
     }
     convertToProxyRecursively(target, config);

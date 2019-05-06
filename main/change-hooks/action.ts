@@ -10,10 +10,7 @@ export class Action {
         const frames = stackTrace.get();
         const context = ContextCapture.getContext(frames, operation, key, value);
         if (this.config.maintainChangeLog) {
-            if (!target.changeLog) {
-                target.changeLog = [];
-            }
-            target.changeLog.push(context);
+            this.config.changeLog.push(context);
         }
         if (this.config.log) {
             console.log(ContextCapture.getPrettyLog(context));

@@ -1,6 +1,11 @@
 import { getTracr } from '../main/index';
 
-const tracerObject = getTracr({ message: 'This is a test', value: 1 }, { maintainChangeLog: true });
+const logs = [];
+const originalObject = { message: 'This is a test', value: 1 };
+const tracerObject = getTracr(
+    originalObject, 
+    { maintainChangeLog: true, changeLog: logs}
+);
 function f1() {
     tracerObject.message = 'This is not a very good test!'
     tracerObject.value = -1;   
@@ -11,14 +16,18 @@ function f2() {
 }
 function f3() {
     tracerObject.newKey = 'Added new key';
+    tracerObject.anotherNewKey = {
+        anotherMessage: 'Added another message'
+    };
 }
 function f4() {
     (function f5(){
         tracerObject.newKey = 'Modified new key';
+        tracerObject.anotherNewKey.anotherMessage = 'Modified another message';
     })();
 }
 f1();
 f2();
 f3();
 f4();
-console.log(tracerObject.changeLog);
+console.log(logs);

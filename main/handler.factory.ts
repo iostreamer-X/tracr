@@ -18,7 +18,7 @@ export function handlerFactory(config: Config) {
         set: function (target, key, value) {
             const handler = getHandler(SetHandler, action);
             if (config.traceNewKeys && target[key] === undefined && typeof value === 'object') {
-                value = getTracr(target[key], config);
+                value = getTracr(value, config);
             }
             handler(target, key, value);
             return true;
